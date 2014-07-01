@@ -6,6 +6,5 @@
 # As set by PyCharm when creating a new
 __author__ = 'fusco'
 
-
-print("Hello World!")
+print("Hello World! 你好世界")
 
