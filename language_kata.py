@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-  # utf-8 is the default, but may specify cp-1252 for windows.
+# -*- coding: utf-8 -*-  # utf-8 is the default, but may specify cp-1252 for windows,
+#                        # The coding: line must be on the first or second line of the script.
 # This script will serve as a 'kata' for the core language.
 # It is an attempt to incorporate most if not all of the core language into one file.
 
