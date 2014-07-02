@@ -131,6 +131,19 @@ def loop_over_indices():
     for i in range(len(a)):
         print(i, a[i])
 print("index walking")
-loop_over_indices()
+#loop_over_indices()
 
+# numbers that are divisible by one and themselves are primes.
+def find_primes_to_max(max):
+    ++max # Include 'max' for human consumption.
+    for n in range(2, max):
+        for x in range(2,n):
+            if n % x == 0:
+                print(n, 'equals', x, '*', n//x)
+                break
+        else:
+            print(n, 'is a prime number')
+
+print("Find prime numbers")
+find_primes_to_max(10)
 
