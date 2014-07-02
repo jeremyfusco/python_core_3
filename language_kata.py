@@ -114,4 +114,15 @@ def simple_fibonacci(max):
         print(b)
         a, b = b, a+b
 print("fibonacci")
-simple_fibonacci(13)
+#simple_fibonacci(13)
+
+def loop_over_slice_copy():
+    words = ['one', 'two', 'three', 'longer_then_6_characters']
+
+    for word in words[:]:     # Creates a slice copy of the entire list.
+        if len(word) > 6:
+            words.insert(0, word)
+    print(words)
+
+print("Creating a slice copy and modifying the original")
+loop_over_slice_copy()
