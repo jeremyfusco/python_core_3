@@ -108,3 +108,10 @@ def simple_lists():
 print("Some simple_lists")
 #simple_lists()
 
+def simple_fibonacci(max):
+    a, b = 0, 1
+    while b < max:
+        print(b)
+        a, b = b, a+b
+print("fibonacci")
+simple_fibonacci(13)
