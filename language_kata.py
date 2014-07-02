@@ -38,7 +38,7 @@ def simple_math():
         result = eval(i)
         print(i, ': ', result)
 print('Some math!')
-simple_math()
+#simple_math()
 
 def simple_strings():
     print("\n\n***Note: Strings are immutable.***\n\n")
@@ -70,5 +70,42 @@ Line two test. To prevent indentation, string violates indentation rule.
     print('Out of range in slice is handled gracefully', string[12:20])
 
     print("Length of variable 'string' is",  len(string))
-simple_strings()
+print('Some strings!')
+#simple_strings()
+
+def simple_lists():
+    print("Note: Lists are mutable")
+
+    list_of_squares = [1, 4, 9, 16, 25]
+    print("List of squares 4 and 9 ", list_of_squares[1:3])
+
+    concatinated_list = list_of_squares + [1, 2, 3, 4]
+    print("concantinated list",concatinated_list )
+
+    concatinated_list[0] = 10000
+    print("'concantinated_list' updated so the first element is 10000: ", concatinated_list[0])
+
+    concatinated_list.append('All your appended are belong to .append')
+    print("Appended a value to concantinated_list via .append", concatinated_list[-1])
+
+    concatinated_list[0:4] = [0, 1, 2, 3, 4]
+    print("Replaced elements 0 through: 4 ", concatinated_list[0:5] )
+
+    concatinated_list[:] = []
+    print('Completely cleared the concatenated_list -->', concatinated_list[:], '<---')
+
+    a = [1,2,3]
+    b = ['a','b','c']
+    as_easy_as = [a,b]
+    print('Multidimensional arrays are so much easier: ', as_easy_as)
+
+    a = ['a', 'b', 'c']
+    n = [1, 2, 3]
+    x = [a, n]
+    print("A list 'x' comprised of two lists, 'a' and 'n' respectively", x)
+    print("x[0] refers to the index of the first list: ",  x[0])
+    print("x[0][0] refers to the first element in the first list: ", x[0][0])
+
+print("Some simple_lists")
+simple_lists()
 
