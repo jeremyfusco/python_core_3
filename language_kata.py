@@ -123,6 +123,14 @@ def loop_over_slice_copy():
         if len(word) > 6:
             words.insert(0, word)
     print(words)
-
 print("Creating a slice copy and modifying the original")
-loop_over_slice_copy()
+#loop_over_slice_copy()
+
+def loop_over_indices():
+    a = ['one', 'two', 'three', 'four']
+    for i in range(len(a)):
+        print(i, a[i])
+print("index walking")
+loop_over_indices()
+
+
