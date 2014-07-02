@@ -160,8 +160,40 @@ def simple_prompt(prompt, retries=4, complaint='Yes or no.'):
         print(complaint)
 
 print("Simple prompt example.")
-simple_prompt('Do you want that neighbors dog to stop barking?')
+#simple_prompt('Do you want that neighbors dog to stop barking?')
+
+L = [1]
+
+# Defines a default value for L. This effectively creates a local instance of 'L' that is
+# Persistent between calls.
+# If L is specified on the call to this routine functional_persistence_local(1, 2) for example.
+# The persistent value will be overwritten.
+
+# Make a copy of the global L as opposed to (a, local_L=L) as this will create a reference
+# To the global and MODIFY IT.
+def functional_persistence_local(a, local_L=L[:]):
+    local_L.append(a)
+    return local_L
+
+# L is overwritten with [] for every subsequent call, if L is not passed. that is to say:
+#   functional_persistence_local_L(1), as opposed to (1, [11]).
+#  Declaring a variable in the def string localizes the named variable to the lexical scope of
+#  The function. Which acts a closure.
 
 
+def functional_persistence_local_L(a, L=None):
+    if L is None:
+        L = [] # Define a local instance of L
+    L.append(a)
+    return L
 
+if False:
+    print("Persistence local", functional_persistence_local(1))
+    print("Persistence local", functional_persistence_local(2))
+
+if True:
+    print("L is overwritten for every call", functional_persistence_local_L(1, [11]))
+    print("L is overwritten for every call", functional_persistence_local_L(2, [12]))
+
+print("global L", L)
 
