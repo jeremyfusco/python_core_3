@@ -206,4 +206,17 @@ def keyword_args(one, two='two', three='three', *formal, **remaining_keywords):
     for key in keys:
         print(key, ':', remaining_keywords[key])
 
-keyword_args('one','two','three', "another extra arg", "another arg with no owner", keyword1='one', keyword2='two')
+print('Passing args to a function!')
+#keyword_args('one','two','three', "another extra arg", "another arg with no owner", keyword1='one', keyword2='two')
+
+def make_lambda_incrementor(n):
+    return lambda x: x + n
+
+print('lambda!')
+f_incrementor = make_lambda_incrementor(1)
+
+pairs = [(0, 'zero'), (1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
+# lambda defines x, and performs the x[1] evaluation to sort.
+# In thise case x[1] will always be the 2nd value of the list being passed.
+pairs.sort(key=lambda x: x[1])
+print(pairs)
