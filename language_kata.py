@@ -16,8 +16,6 @@ __author__ = 'fusco'
 print('Hello world in English and Chinese: ', end='')
 print("Hello World! 你好世界")
 
-from array import *
-
 # Here is where I discover you must pre-declare a definition in Python. Feels like Perl 4.
 # if you don't have cold folding this is going to look very, very ugly.
 def simple_math():
@@ -73,3 +71,4 @@ Line two test. To prevent indentation, string violates indentation rule.
 
     print("Length of variable 'string' is",  len(string))
 simple_strings()
+
