@@ -18,7 +18,7 @@ print("Hello World! 你好世界")
 
 from array import *
 
-# Here is where I discover you must predeclare a definition in Python. Feels like Perl 4.
+# Here is where I discover you must pre-declare a definition in Python. Feels like Perl 4.
 # if you don't have cold folding this is going to look very, very ugly.
 def simple_math():
     equations = ['2 + 2',
@@ -39,7 +39,37 @@ def simple_math():
     for i in equations:
         result = eval(i)
         print(i, ': ', result)
-
 print('Some math!')
 simple_math()
 
+def simple_strings():
+    print("\n\n***Note: Strings are immutable.***\n\n")
+
+    foo = 'foo'
+
+    strings = ['Single level of quotes. escapes work \'.',
+                "Double level quotes. escapes work \' but not needed, '.",
+                r'raw string no support for\ninterpolation\n',
+                """\
+String literal denoted by \"\"\"...\"\"\" or '''...'''
+Line two test. To prevent indentation, string violates indentation rule.
+                """,
+                "text multiply by 3\n" * 3,
+                'auto' 'matic' ' ' 'concatenation',
+                foo + 'bar',
+                ('several strings '
+                'a part of one concatenation'),
+               ]
+    for i in strings:
+        print(i)
+
+    string = '0123456789'
+    print('This is position 0: ', string[0])
+    print('This is position 3: ', string[3])
+    print('These are positions 3-4: ', string[3:5])
+    print('These are positions 3 through end: ', string[3:])
+    print('Last position: ', string[-1])
+    print('Out of range in slice is handled gracefully', string[12:20])
+
+    print("Length of variable 'string' is",  len(string))
+simple_strings()
