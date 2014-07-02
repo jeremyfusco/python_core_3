@@ -191,9 +191,19 @@ if False:
     print("Persistence local", functional_persistence_local(1))
     print("Persistence local", functional_persistence_local(2))
 
-if True:
+if False:
     print("L is overwritten for every call", functional_persistence_local_L(1, [11]))
     print("L is overwritten for every call", functional_persistence_local_L(2, [12]))
 
-print("global L", L)
+# *formal is is  variadic argument which scoopes up non keyword and non specified keyword arguments that would normally
+# preceed it.
+def keyword_args(one, two='two', three='three', *formal, **remaining_keywords):
+    print('printing contents of one, two, three', one, two, three)
+    for entry in formal:
+        print('entry', entry)
+    print("-" * 80)
+    keys = sorted(remaining_keywords.keys())
+    for key in keys:
+        print(key, ':', remaining_keywords[key])
 
+keyword_args('one','two','three', "another extra arg", "another arg with no owner", keyword1='one', keyword2='two')
