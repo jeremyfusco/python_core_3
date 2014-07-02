@@ -135,15 +135,33 @@ print("index walking")
 
 # numbers that are divisible by one and themselves are primes.
 def find_primes_to_max(max):
-    ++max # Include 'max' for human consumption.
+    max = max + 1 # Include 'max' for human consumption.
     for n in range(2, max):
         for x in range(2,n):
             if n % x == 0:
                 print(n, 'equals', x, '*', n//x)
                 break
-        else:
+        else:  # Else executes for loops not broken out of 'break'. ( poorly named ).
             print(n, 'is a prime number')
 
 print("Find prime numbers")
-find_primes_to_max(10)
+#find_primes_to_max(11)
+
+def simple_prompt(prompt, retries=4, complaint='Yes or no.'):
+    while True:
+        ok = input(prompt)
+        if ok in ('y', 'ye', 'yes'):
+            return True
+        if ok in ('n', 'no', 'nop', 'nope'):
+            return False
+        retries = retries - 1
+        if retries < 1:
+            raise OSError('no answer provided.')
+        print(complaint)
+
+print("Simple prompt example.")
+simple_prompt('Do you want that neighbors dog to stop barking?')
+
+
+
 
