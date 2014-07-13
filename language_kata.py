@@ -204,14 +204,13 @@ def scope_l():
         l.append(a)
         return l
 
+    if True:
+        print("Persistence local", functional_persistence_local(1))
+        print("Persistence local", functional_persistence_local(2))
 
-if False:
-    print("Persistence local", functional_persistence_local(1))
-    print("Persistence local", functional_persistence_local(2))
-
-if False:
-    print("l is overwritten for every call", functional_persistence_local_l(1, [11]))
-    print("l is overwritten for every call", functional_persistence_local_l(2, [12]))
+    if True:
+        print("l is overwritten for every call", functional_persistence_local_l(1, [11]))
+        print("l is overwritten for every call", functional_persistence_local_l(2, [12]))
 
 # *formal is is  'variadic' argument which scoops up non keyword and non specified keyword arguments that would normally
 # precede it.
