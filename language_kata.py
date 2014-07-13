@@ -210,8 +210,8 @@ if False:
     print("Persistence local", functional_persistence_local(2))
 
 if False:
-    print("L is overwritten for every call", functional_persistence_local_L(1, [11]))
-    print("L is overwritten for every call", functional_persistence_local_L(2, [12]))
+    print("l is overwritten for every call", functional_persistence_local_l(1, [11]))
+    print("l is overwritten for every call", functional_persistence_local_l(2, [12]))
 
 # *formal is is  variadic argument which scoopes up non keyword and non specified keyword arguments that would normally
 # preceed it.
