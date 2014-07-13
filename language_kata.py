@@ -12,7 +12,7 @@ __author__ = 'fusco'
 # import site
 # import os
 
-# end replaces newline with a multiline string.
+# end replaces newline with a multi-line string.
 print('Hello world in English and Chinese: ', end='')
 print("Hello World! 你好世界")
 
@@ -56,7 +56,7 @@ String literal denoted by \"\"\"...\"\"\" or '''...'''
 Line two test. To prevent indentation, string violates indentation rule.
                 """,
                "text multiply by 3\n" * 3,
-               'auto' 'matic' ' ' 'concatenation',
+               'automatic' ' ' 'concatenation',
                foo + 'bar',
                ('several strings '
                 'a part of one concatenation'),
@@ -213,8 +213,8 @@ if False:
     print("l is overwritten for every call", functional_persistence_local_l(1, [11]))
     print("l is overwritten for every call", functional_persistence_local_l(2, [12]))
 
-# *formal is is  variadic argument which scoopes up non keyword and non specified keyword arguments that would normally
-# preceed it.
+# *formal is is  'variadic' argument which scoops up non keyword and non specified keyword arguments that would normally
+# precede it.
 def keyword_args(one, two='two', three='three', *formal, **remaining_keywords):
     print('printing contents of one, two, three', one, two, three)
     for entry in formal:
