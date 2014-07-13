@@ -85,20 +85,20 @@ def simple_lists():
     list_of_squares = [1, 4, 9, 16, 25]
     print("List of squares 4 and 9", list_of_squares[1:3])
 
-    concatinated_list = list_of_squares + [1, 2, 3, 4]
-    print("concantinated list", concatinated_list)
+    concatenated_list = list_of_squares + [1, 2, 3, 4]
+    print("concatenated list", concatenated_list)
 
-    concatinated_list[0] = 10000
-    print("'concantinated_list' updated so the first element is 10000:", concatinated_list[0])
+    concatenated_list[0] = 10000
+    print("'concatenated_list' updated so the first element is 10000:", concatenated_list[0])
 
-    concatinated_list.append('All your appended are belong to .append')
-    print("Appended a value to concantinated_list via .append", concatinated_list[-1])
+    concatenated_list.append('All your appended are belong to .append')
+    print("Appended a value to concatenated_list via .append", concatenated_list[-1])
 
-    concatinated_list[0:4] = [0, 1, 2, 3, 4]
-    print("Replaced elements 0 through: 4", concatinated_list[0:5])
+    concatenated_list[0:4] = [0, 1, 2, 3, 4]
+    print("Replaced elements 0 through: 4", concatenated_list[0:5])
 
-    concatinated_list[:] = []
-    print('Completely cleared the concatenated_list -->', concatinated_list[:], '<---')
+    concatenated_list[:] = []
+    print('Completely cleared the concatenated_list -->', concatenated_list[:], '<---')
 
     a = [1, 2, 3]
     b = ['a', 'b', 'c']
@@ -228,15 +228,15 @@ def keyword_args(one, two='two', three='three', *formal, **remaining_keywords):
 print('Passing args to a function!')
 #keyword_args('one','two','three', "another extra arg", "another arg with no owner", keyword1='one', keyword2='two')
 
-def make_lambda_incrementor(n):
+def make_lambda_incrementer(n):
     return lambda x: x + n
 
 
 print('lambda!')
-f_incrementor = make_lambda_incrementor(1)
+f_incrementer = make_lambda_incrementer(1)
 
 pairs = [(0, 'zero'), (1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
 # lambda defines x, and performs the x[1] evaluation to sort.
-# In thise case x[1] will always be the 2nd value of the list being passed.
+# In this case x[1] will always be the 2nd value of the list being passed.
 pairs.sort(key=lambda x: x[1])
 print(pairs)
