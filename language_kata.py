@@ -176,33 +176,33 @@ def simple_prompt(prompt, retries=4, complaint='Yes or no.'):
 
 
 print("Simple prompt example.")
-#simple_prompt('Do you want that neighbors dog to stop barking?')
 
-l = [1]
+def scope_l():
+    l = [1]
 
-# Defines a default value for l. This effectively creates a local instance of 'l' that is
-# Persistent between calls.
-# If l is specified on the call to this routine functional_persistence_local(1, 2) for example.
-# The persistent value will be overwritten.
+    # Defines a default value for l. This effectively creates a local instance of 'l' that is
+    # Persistent between calls.
+    # If l is specified on the call to this routine functional_persistence_local(1, 2) for example.
+    # The persistent value will be overwritten.
 
-# Make a copy of the global L as opposed to (a, local_l=l) as this will create a reference
-# To the global and MODIFY IT.
-def functional_persistence_local(a, local_l=l[:]):
-    local_l.append(a)
-    return local_l
-
-
-# L is overwritten with [] for every subsequent call, if L is not passed. that is to say:
-#   functional_persistence_local_L(1), as opposed to (1, [11]).
-#  Declaring a variable in the def string localizes the named variable to the lexical scope of
-#  The function. Which acts a closure.
+    # Make a copy of the global L as opposed to (a, local_l=l) as this will create a reference
+    # To the global and MODIFY IT.
+    def functional_persistence_local(a, local_l=l[:]):
+        local_l.append(a)
+        return local_l
 
 
-def functional_persistence_local_l(a, l=None):
-    if l is None:
-        l = []  # Define a local instance of L
-    l.append(a)
-    return l
+    # L is overwritten with [] for every subsequent call, if L is not passed. that is to say:
+    #   functional_persistence_local_L(1), as opposed to (1, [11]).
+    #  Declaring a variable in the def string localizes the named variable to the lexical scope of
+    #  The function. Which acts a closure.
+
+
+    def functional_persistence_local_l(a, l=None):
+        if l is None:
+            l = []  # Define a local instance of L
+        l.append(a)
+        return l
 
 
 if False:
