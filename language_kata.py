@@ -191,13 +191,10 @@ def scope_l():
         local_l.append(a)
         return local_l
 
-
     # L is overwritten with [] for every subsequent call, if L is not passed. that is to say:
     #   functional_persistence_local_L(1), as opposed to (1, [11]).
     #  Declaring a variable in the def string localizes the named variable to the lexical scope of
     #  The function. Which acts a closure.
-
-
     def functional_persistence_local_l(a, l=None):
         if l is None:
             l = []  # Define a local instance of L
