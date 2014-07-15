@@ -577,3 +577,15 @@ def simple_with_file_usage(file):
 
 simple_with_file_usage('with_file')
 
+def exception_handling_more(divide_by):
+    try:
+        result = 1 / divide_by
+    except ZeroDivisionError:
+        print("division by zero!")
+        sys.exit(10)
+    else:
+        return result
+    finally:
+        print("Finally clause is executed before else but not except, except in cases where exit is called... I need to find some clearer excpetion handling docs then the tutorial.")
+
+print("divide a number with exception handling", exception_handling_more(0))
