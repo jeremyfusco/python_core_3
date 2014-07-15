@@ -302,7 +302,7 @@ print("List comprehensions. Lists can be created iteratively or")
 print("by generating the entire list and assigning.")
 create_list_of_squares()
 
-# returns a list of tuples.
+# returns a list of tuples.upe
 def compare_two_lists_by_for_loops(passed_x, passed_y):
     combs = []
     for x in passed_x:
@@ -523,13 +523,57 @@ def store_an_object_via_pickle():
     pickle.dump(simple_dictionary, p)
     p.close()
 
-#store_an_object_via_pickle()
-
+# pickling is cross endian compatible.( Not tested ).
+# Pickling utilizes a stack vm which may execute arbitrary code on load.
 def load_an_object_via_pickle():
     import pickle
     p = open('pickled', 'rb')
     pickled = pickle.load(p)
     print(pickled)
 
-
 load_an_object_via_pickle()
+
+
+def simple_input():
+    while True:
+        try:
+            x = int(input("Please enter a number: "))
+            break
+        except ValueError:
+                print("We need an int.")
+
+#simple_input()
+
+def simple_exception_args():
+    try:
+        raise Exception('spam', 'eggs')
+    except Exception as inst:
+        print(type(inst))   # the exception instance
+        print(inst.args)    # arguments stored in .args
+        print(inst)         # __str__ allows args to be printed directly,
+                            # but may be overridden in the exception subclasses
+        x, y = inst.args    # unpack args
+        print('x =', x)
+        print('y =', y)
+
+simple_exception_args()
+
+def divide_by_zero():
+    pass
+    #x = 1/0
+
+try:
+    divide_by_zero()
+except ZeroDivisionError as err:
+        print("except'ed 'err':", err)
+
+def simple_with_file_usage(file):
+    sample_text = ('one', 'two', 'three')
+
+    with open(file, 'w') as file:
+        for line in sample_text:
+            line = line + "\n"
+            file.write(line)
+
+simple_with_file_usage('with_file')
+
